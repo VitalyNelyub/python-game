@@ -48,7 +48,7 @@ def create_enemy():
 def create_bonus():
     bonus_size = (10, 10)
     bonus = pygame.transform.scale(pygame.image.load("images/bonus.png").convert_alpha(), (85, 130))
-    bonus_rect = pygame.Rect(random.randint(bonus_size[0], WIDTH - bonus_size[0]), random.randint(bonus_size[1], HEIGHT - bonus_size[1]), *bonus_size)
+    bonus_rect = pygame.Rect(random.randint(bonus_size[0], WIDTH - bonus_size[0]), 0, *bonus_size)
     bonus_move = [0, random.randint(2, 4)]
     return [bonus, bonus_rect, bonus_move]
 
