@@ -40,7 +40,7 @@ player_move_left = [-4, 0]
 def create_enemy():
     enemy_size = (25, 12)
     enemy = pygame.transform.scale(pygame.image.load("images/enemy.png").convert_alpha(), (135, 20))
-    enemy_rect = pygame.Rect(WIDTH, random.randint(0, HEIGHT), *enemy_size)
+    enemy_rect = pygame.Rect(WIDTH, random.randint(0, HEIGHT - enemy_size[1]), *enemy_size)
     enemy_move = [random.randint(-8, -4), 0]
     return [enemy, enemy_rect, enemy_move]
 
@@ -48,7 +48,7 @@ def create_enemy():
 def create_bonus():
     bonus_size = (10, 10)
     bonus = pygame.transform.scale(pygame.image.load("images/bonus.png").convert_alpha(), (85, 130))
-    bonus_rect = pygame.Rect(random.randint(0, WIDTH), 0, *bonus_size)
+    bonus_rect = pygame.Rect(random.randint(bonus_size[0], WIDTH - bonus_size[0]), random.randint(bonus_size[1], HEIGHT - bonus_size[1]), *bonus_size)
     bonus_move = [0, random.randint(2, 4)]
     return [bonus, bonus_rect, bonus_move]
 
